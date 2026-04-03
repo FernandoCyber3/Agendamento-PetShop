@@ -1,0 +1,59 @@
+import dayjs from "dayjs"
+
+const morningList = document.getElementById("morning-list")
+const afternoonList = document.getElementById("afternoon-list")
+const nightList = document.getElementById("night-list")
+
+export function viewAppointementsList ({ dailyAppointments }) {
+  try {
+    morningList.innerHTML = " "
+    afternoonList.innerHTML = " "
+    nightList.innerHTML = " "
+    
+    dailyAppointments.forEach((appointments) => {
+      const hourAppointments = dayjs(appointments.date).format("HH:mm")
+      const hourOnly = parseInt(dayjs(appointments.date).format("HH"))
+
+      const li = document.createElement("li")
+      li.classList.add("description-scheduling")
+      li.setAttribute("data-id", appointments.id)
+
+      const div = document.createElement("div")
+
+      const hours = document.createElement("strong")
+      hours.classList.add("hour")
+      hours.textContent = hourAppointments
+
+      const strong = document.createElement("strong")
+      strong.textContent =`${appointments.pet} / `
+
+      const span = document.createElement("span")
+      span.textContent = appointments.tutor
+
+      div.append(hours, strong, span)
+
+      const p = document.createElement("p")
+      p.textContent = appointments.description 
+
+      const button = document.createElement("button")
+      button.textContent = "Remover agendamento"
+
+      li.append(div, p, button)
+
+      if (hourOnly <= 12){
+        morningList.appendChild(li)
+      } else if (hourOnly >= 13  && hourOnly < 18) {
+        afternoonList.appendChild(li)
+      } else {
+        nightList.appendChild(li)
+      }
+         
+    });
+
+  } catch (error) {
+    console.log(error)
+    alert("Não foi possível gerar a lista")
+  }
+
+
+}

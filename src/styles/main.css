@@ -1,0 +1,64 @@
+main {
+  max-width: 890px;
+  padding-top: 10px;
+  padding-bottom: 80px;
+  padding-inline: 16px;
+  position: relative;
+}
+
+#form-header{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  & h1 {
+    margin-bottom: 10px;
+    font: var(--text-title)
+  }
+
+  & p {
+    color: var(--content-secondary);
+    margin-right: 3.5rem;
+  }
+
+  & .date-picker-wrapper{
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 0.75rem;
+    height: 50px;
+    width: 210px;
+    
+    &:hover{
+      border: 1px solid var(--border-secondary);
+    }
+
+    &:focus-within{
+      border: 1px solid var(--content-brand);
+    }
+
+    & i img{
+      margin-right: 0.75rem;
+    }
+
+    & #date{
+      background: transparent;
+      color: var(--content-secondary);
+      border: none;
+      outline: unset;
+    }
+
+  }
+}
+
+
+@media only screen and (min-width:1020px) {
+  #form-header{
+    flex-direction: row;
+    gap: 3rem;
+    width: auto;
+    padding-bottom: 0;
+  }
+}
