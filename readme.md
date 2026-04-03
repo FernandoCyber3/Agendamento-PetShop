@@ -1,4 +1,3 @@
-Aqui está o código completo do seu README com os links das imagens (badges) corrigidos, mantendo todo o restante do conteúdo e formatação original:
 
 <h1 align="center" style="font-weight: bold;">🐾 PetShop Appointments</h1>
 <p align="center">
