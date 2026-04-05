@@ -1,7 +1,7 @@
 {
   "name": "petshopday",
   "description": "Aplicação web para agendamento de atendimento de pets",
-  "author": "Thales Fortes",
+  "author": "Fernando H",
   "scripts": {
     "server": "json-server --watch server.json --port 3333",
     "build": "webpack",
